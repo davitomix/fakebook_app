@@ -18,7 +18,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	height: 100vh;
 	margin: 0;
 }
 
@@ -41,15 +41,11 @@ body {
   }
 }
 
-
-
 .login-container {
   background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-	overflow: hidden;
-	width: 400px;
-  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
   .header {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
@@ -124,5 +120,17 @@ body {
     .link-box:last-of-type {
       padding-bottom: 25px;
     }
+  }
+}
+
+@media only screen and (max-width: 756px) {
+  .login-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 757px) {
+  .login-container {
+    width: 500px;
   }
 }
