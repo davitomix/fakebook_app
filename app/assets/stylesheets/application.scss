@@ -93,6 +93,9 @@ body {
         margin-top: 20px;
         width: 100%;
       }
+      .button:hover {
+        cursor: pointer;
+      }
     }
     .remember-me {
       display: flex;
@@ -102,6 +105,24 @@ body {
       input {
         width: 50%;
       }
+    }
+  }
+  .form-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .link-box {
+      padding: 5px 10px;
+      a {
+        text-decoration: none;
+        color: #598bb6;
+      }
+      a:hover {
+        color: #304e68;
+      }
+    }
+    .link-box:last-of-type {
+      padding-bottom: 25px;
     }
   }
 }
