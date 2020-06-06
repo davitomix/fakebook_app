@@ -1,3 +1,12 @@
 body {
-  background-color: white;
+  background-color: rgb(184, 180, 180);
+}
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
