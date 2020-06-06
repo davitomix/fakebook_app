@@ -1,12 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
   background-color: rgb(184, 180, 180);
 }
 
-.login-page {
-  width: 100vw;
-  height: 100vh;
+.body {
+	background-color: #598bb6;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.nav {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
   align-items: center;
+  justify-content: flex-end;
+  li{
+    a{
+      color: black;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    a:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+}
+
+
+
+.login-container {
+  background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+  max-width: 100%;
+  .header {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    h2 {
+      margin: 0;
+    }
+  }
+  .form {
+    padding: 30px 40px;
+    .form-control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+      label {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+      }
+      input:focus {
+        outline: 0;
+        border-color: #777;
+      }
+      .button {
+        background-color: #598bb6;
+        border: 2px solid #598bb6;
+        border-radius: 4px;
+        color: #fff;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+    .remember-me {
+      display: flex;
+      label {
+        width: 50%;
+      }
+      input {
+        width: 50%;
+      }
+    }
+  }
 }
