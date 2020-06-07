@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(184, 180, 180);
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  min-height: 100vh;
+	background-color: #598bb6;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  align-items: center;
+  justify-content: flex-end;
+  li{
+    a{
+      color: black;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    a:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+}
+
+.login-container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  .header {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    h2 {
+      margin: 0;
+    }
+  }
+  .form {
+    overflow: hidden;
+    padding: 30px 40px;
+    .form-control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+      label {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+      }
+      input:focus {
+        outline: 0;
+        border-color: #777;
+      }
+      .button {
+        background-color: #598bb6;
+        border: 2px solid #598bb6;
+        border-radius: 4px;
+        color: #fff;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 100%;
+      }
+      .button:hover {
+        cursor: pointer;
+      }
+    }
+    .remember-me {
+      display: flex;
+      label {
+        width: 50%;
+      }
+      input {
+        width: 50%;
+      }
+    }
+  }
+  .form-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .link-box {
+      padding: 5px 10px;
+      a {
+        text-decoration: none;
+        color: #598bb6;
+      }
+      a:hover {
+        color: #304e68;
+      }
+    }
+    .link-box:last-of-type {
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.cancel-account,
+.form-back {
+  text-align: center;
+  margin: auto;
+  background-color: #598bb6;
+  border: 2px solid #598bb6;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 85%;
+}
+
+.unhappy {
+  text-align: center;
+}
+
+@media only screen and (max-width: 756px) {
+  .login-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 757px) {
+  .login-container {
+    width: 500px;
+  }
+}
