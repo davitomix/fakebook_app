@@ -1,4 +1,3 @@
-<%= javascript_pack_tag 'application' %>
 <div class="body">
   <div class="login-container">
     <div class="header">
@@ -8,12 +7,18 @@
 
       <div class="form-control">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autocomplete: "email" %>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
 
       <div class="form-control">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -24,7 +29,7 @@
       <% end %>
 
       <div class="form-control">
-        <%= f.submit "Log in", :class => "button" %>
+        <%= f.submit "Log in", :class => "button" , :id => "submit-btn"%>
       </div>
     <% end %>
 

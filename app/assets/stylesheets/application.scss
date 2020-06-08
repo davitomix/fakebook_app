@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
-
 * {
 	box-sizing: border-box;
 }
-
 body {
   background-color: rgb(184, 180, 180);
   margin: 0;
   padding: 0;
 }
-
 .body {
   min-height: 100vh;
 	background-color: #598bb6;
@@ -21,7 +18,6 @@ body {
 	height: 100%;
 	margin: 0;
 }
-
 .nav {
   display: flex;
   flex-flow: row wrap;
@@ -65,6 +61,7 @@ body {
         display: inline-block;
         margin-bottom: 5px;
       }
+
       input {
         border: 2px solid #f0f0f0;
         border-radius: 4px;
@@ -74,10 +71,12 @@ body {
         padding: 10px;
         width: 100%;
       }
+
       input:focus {
         outline: 0;
         border-color: #777;
       }
+
       .button {
         background-color: #598bb6;
         border: 2px solid #598bb6;
@@ -90,10 +89,48 @@ body {
         margin-top: 20px;
         width: 100%;
       }
+
       .button:hover {
         cursor: pointer;
       }
     }
+    .form-control.success input {
+      border-color: #2ecc71;
+    }
+
+    .form-control.error input {
+      border-color: #e74c3c;
+    }
+
+    .form-control i {
+      visibility: hidden;
+      position: absolute;
+      top: 40px;
+      right: 10px;
+    }
+
+    .form-control.success i.fa-check-circle {
+      color: #2ecc71;
+      visibility: visible;
+    }
+    
+    .form-control.error i.fa-exclamation-circle {
+      color: #e74c3c;
+      visibility: visible;
+    }
+    
+    .form-control small {
+      color: #e74c3c;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+    }
+    
+    .form-control.error small {
+      visibility: visible;
+    }
+    
     .remember-me {
       display: flex;
       label {
