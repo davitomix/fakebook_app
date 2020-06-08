@@ -17,6 +17,8 @@
 
 console.log('Hello World from Webpacker');
 const form = document.querySelector('.form');
+const email = document.getElementById('user_email');
+const password = document.getElementById('user_password');
 
 const start = (() => {
   console.log(form);
