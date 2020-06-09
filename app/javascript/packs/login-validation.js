@@ -56,6 +56,8 @@ const FormChecker = (() => {
       case 'Password':
         if(value.length <= 0) {
           setErrorFor(item, `${itemStr} cannot be blank`);
+        } else if (value.length < 6) {
+          setErrorFor(item, 'Password cannot be less than 6 characters');
         } else {
           setSuccessFor(item);
         }
