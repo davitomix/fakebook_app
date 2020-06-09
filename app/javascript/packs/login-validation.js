@@ -5,35 +5,39 @@ const FormChecker = (() => {
 
 
   const scan = () => {
-    let emailValue = email.value.trim();
     if(alertBox.innerText === '') {
-      email.addEventListener('keypress', (e) => {
-        emailValue = email.value.trim();
-        if (!isEmail(emailValue)) {
-          setErrorFor(email, 'Not a valid email');
-        } else {
-          setSuccessFor(email);
-        }
+      email.addEventListener('keydown', (e) => {
+        scanItemAfter(email, 'Email');
       });
       email.addEventListener('focus', (e) => {
-        if(emailValue === '') {
-          setErrorFor(email, 'Email cannot be blank');
-        }
-        else if (!isEmail(emailValue)) {
-          setErrorFor(email, 'Not a valid email');
-        } else {
-          setSuccessFor(email);
-        }
+        scanItemFirst(email, 'Email');
       });
     } else {
-      if(emailValue === '') {
-        setErrorFor(email, 'Email cannot be blank');
-      }
-      else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'Not a valid email');
-      } else {
-        setSuccessFor(email);
-      }
+      scanItemFirst(email, 'Email');
+      email.addEventListener('keydown', (e) => {
+        scanItemAfter(email, 'Email');
+      });
+    }
+  };
+
+  const scanItemFirst = (item, itemStr) => {
+    const value = item.value.trim();
+    if(value === '') {
+      setErrorFor(item, `${itemStr} cannot be blank`);
+    }
+    else if (!isEmail(value)) {
+      setErrorFor(item, `Not a valid ${itemStr}`);
+    } else {
+      setSuccessFor(item);
+    }
+  };
+
+  const scanItemAfter = (item, itemStr) => {
+    const value = item.value.trim();
+    if (!isEmail(value)) {
+      setErrorFor(item, `Not a valid ${itemStr}`);
+    } else {
+      setSuccessFor(item);
     }
   };
 
