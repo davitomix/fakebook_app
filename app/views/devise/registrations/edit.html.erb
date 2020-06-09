@@ -7,8 +7,11 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-control">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autocomplete: "email" %>
+        <i class="fa fa-check-circle"></i>
+        <i class="fa fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,21 +19,23 @@
       <% end %>
 
       <div class="form-control">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, autocomplete: "new-password" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
+        <i class="fa fa-check-circle"></i>
+        <i class="fa fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
 
       <div class="form-control">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <i class="fa fa-check-circle"></i>
+        <i class="fa fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
 
       <div class="form-control">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
         <%= f.password_field :current_password, autocomplete: "current-password" %>
       </div>
 
@@ -50,3 +55,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'useredit-validation' %>

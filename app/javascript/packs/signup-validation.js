@@ -1,20 +1,18 @@
 const FormChecker = (() => {
   const email = document.getElementById('user_email');
   const password = document.getElementById('user_password');
-  const alertBox = document.getElementById('alert-content');
+  const passwordConfirmation = document.getElementById('user_password_confirmation');
+  const errorExp = document.getElementById('error_explanation');
 
 
   const scanForm = () => {
-    if(alertBox.innerText === '') {
+    if(errorExp == null) {
       scanFocus(email, 'Email');
       scanKey(email, 'Email');
       scanFocus(password, 'Password');
       scanKey(password, 'Password');
-    } else {
-      scanItem(email, 'Email');
-      scanKey(email, 'Email');
-      scanItem(password, 'Password');
-      scanKey(password, 'Password');
+      scanFocus(passwordConfirmation, 'PassConfirm');
+      scanKey(passwordConfirmation, 'PassConfirm');
     }
   };
 
@@ -51,6 +49,17 @@ const FormChecker = (() => {
       case 'Password':
         if(value.length <= 0) {
           setErrorFor(item, `${itemStr} cannot be blank`);
+        } else if (value.length < 6) {
+          setErrorFor(item, 'Password cannot be less than 6 characters');
+        } else {
+          setSuccessFor(item);
+        }
+        break;
+      case 'PassConfirm':
+        if(value.length <= 0) {
+          setErrorFor(item, 'Password cannot be blank');
+        } else if (value !== pass) {
+          setErrorFor(item, 'Passwords does not match');
         } else {
           setSuccessFor(item);
         }

@@ -1,20 +1,30 @@
 const FormChecker = (() => {
   const email = document.getElementById('user_email');
   const password = document.getElementById('user_password');
-  const alertBox = document.getElementById('alert-content');
+  const passwordConfirmation = document.getElementById('user_password_confirmation');
+  const currentPassword = document.getElementById('user_current_password');
+  const errorExp = document.getElementById('error_explanation');
 
 
   const scanForm = () => {
-    if(alertBox.innerText === '') {
+    if(errorExp == null) {
       scanFocus(email, 'Email');
       scanKey(email, 'Email');
       scanFocus(password, 'Password');
       scanKey(password, 'Password');
+      scanFocus(passwordConfirmation, 'PassConfirm');
+      scanKey(passwordConfirmation, 'PassConfirm');
+      scanFocus(currentPassword, 'Password');
+      scanKey(currentPassword, 'Password');
     } else {
       scanItem(email, 'Email');
       scanKey(email, 'Email');
       scanItem(password, 'Password');
       scanKey(password, 'Password');
+      scanItem(passwordConfirmation, 'PassConfirm');
+      scanKey(passwordConfirmation, 'PassConfirm');
+      scanItem(currentPassword, 'Password');
+      scanKey(currentPassword, 'Password');
     }
   };
 
@@ -51,6 +61,17 @@ const FormChecker = (() => {
       case 'Password':
         if(value.length <= 0) {
           setErrorFor(item, `${itemStr} cannot be blank`);
+        } else if (value.length < 6) {
+          setErrorFor(item, 'Password cannot be less than 6 characters');
+        } else {
+          setSuccessFor(item);
+        }
+        break;
+      case 'PassConfirm':
+        if(value.length <= 0) {
+          setErrorFor(item, 'Password cannot be blank');
+        } else if (value !== pass) {
+          setErrorFor(item, 'Passwords does not match');
         } else {
           setSuccessFor(item);
         }
@@ -62,7 +83,9 @@ const FormChecker = (() => {
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
-    small.innerText = message;
+    if (small != null) {
+      small.innerText = message;
+    }
   };
   
   const setSuccessFor = (input) => {

@@ -8,16 +8,16 @@
       <div class="form-control">
         <%= f.label :email %><br />
         <%= f.email_field :email, autocomplete: "email" %>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
+        <i class="fa fa-check-circle"></i>
+        <i class="fa fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
 
       <div class="form-control">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
+        <i class="fa fa-check-circle"></i>
+        <i class="fa fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
 
@@ -36,3 +36,5 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'login-validation' %>
