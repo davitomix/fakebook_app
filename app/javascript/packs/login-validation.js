@@ -4,60 +4,54 @@ const FormChecker = (() => {
   const alertBox = document.getElementById('alert-content');
 
 
-  const scan = () => {
+  const scanForm = () => {
     if(alertBox.innerText === '') {
-      email.addEventListener('keydown', (e) => {
-        scanItemAfter(email, 'Email');
-      });
-      email.addEventListener('focus', (e) => {
-        scanItemFirst(email, 'Email');
-      });
+      scanFocus(email, 'Email');
+      scanKey(email, 'Email');
+      scanFocus(password, 'Password');
+      scanKey(password, 'Password');
     } else {
-      scanItemFirst(email, 'Email');
-      email.addEventListener('keydown', (e) => {
-        scanItemAfter(email, 'Email');
-      });
+      scanItem(email, 'Email');
+      scanKey(email, 'Email');
+      scanItem(password, 'Password');
+      scanKey(password, 'Password');
     }
   };
 
-  const scanItemFirst = (item, itemStr) => {
+  const scanFocus = (item, itemStr) => {
+    item.addEventListener('focus', (e) => {
+      scanItem(item, itemStr);
+    });
+  };
+
+  const scanKey = (item, itemStr) => {
+    item.addEventListener('keydown', (e) => {
+      scanItem(item, itemStr);
+    });
+  };
+
+  const scanItem = (item, itemStr) => {
     const value = item.value.trim();
-    if(value === '') {
-      setErrorFor(item, `${itemStr} cannot be blank`);
-    }
-    else if (!isEmail(value)) {
-      setErrorFor(item, `Not a valid ${itemStr}`);
-    } else {
-      setSuccessFor(item);
-    }
-  };
-
-  const scanItemAfter = (item, itemStr) => {
-    const value = item.value.trim();
-    if (!isEmail(value)) {
-      setErrorFor(item, `Not a valid ${itemStr}`);
-    } else {
-      setSuccessFor(item);
-    }
-  };
-
-  const checkInputs = () => {
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    
-    if(emailValue === '') {
-      setErrorFor(email, 'Email cannot be blank');
-    } else if (!isEmail(emailValue)) {
-      setErrorFor(email, 'Not a valid email');
-    } else {
-      setSuccessFor(email);
-    }
-
-    if(passwordValue === '') {
-      setErrorFor(password, 'Password cannot be blank');
-    } else {
-      setSuccessFor(password);
-    }
+    switch(itemStr) {
+      case 'Email':
+        if(value === '') {
+          setErrorFor(item, `${itemStr} cannot be blank`);
+        }
+        else if (!isEmail(value)) {
+          setErrorFor(item, `Not a valid ${itemStr}`);
+        } else {
+          setSuccessFor(item);
+        }
+        break;
+      case 'Password':
+        if(value === '') {
+          setErrorFor(item, `${itemStr} cannot be blank`);
+        }
+         else {
+          setSuccessFor(item);
+        }
+        break;
+    };
   };
 
   const setErrorFor = (input, message) => {
@@ -77,7 +71,7 @@ const FormChecker = (() => {
   };
 
   return {
-    scan
+    scanForm
   }
 })();
 export default FormChecker;
