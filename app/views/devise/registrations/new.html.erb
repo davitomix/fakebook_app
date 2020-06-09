@@ -16,9 +16,6 @@
 
       <div class="form-control">
         <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
         <i class="fa fa-check-circle"></i>
         <i class="fa fa-exclamation-circle"></i>
@@ -42,3 +39,4 @@
   </div>
 </div>
 
+<%= javascript_pack_tag 'signup-validation' %>
