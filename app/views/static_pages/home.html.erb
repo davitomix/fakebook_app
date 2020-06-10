@@ -1,0 +1,24 @@
+<h1>StaticPages#home</h1>
+<% @users.each do |user| %>
+    <div>
+      <p>
+        <%= user.email %>
+      </p>
+    </div>
+<% end %>
+
+<% @posts.each do |post| %>
+    <div>
+      <p>
+        <%= post.content %>
+      </p>
+    </div>
+<% end %>
+
+<% @comments.each do |comment| %>
+    <div>
+      <p>
+        <%= comment.user.email %>
+      </p>
+    </div>
+<% end %>

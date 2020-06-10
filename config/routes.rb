@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'users#index'
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
+  root 'static_pages#home'
+  get  '/home',   to: 'static_pages#home'
+  get  '/about',   to: 'static_pages#about'
+  get  '/contact', to: 'static_pages#contact'
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup'}, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :posts do
     resources :like_posts, only: %i[create destroy]
     resources :comments, only: %i[create] do
