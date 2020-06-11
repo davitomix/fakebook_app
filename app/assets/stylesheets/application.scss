@@ -4,13 +4,15 @@
 * {
 	box-sizing: border-box;
 }
+html {
+  background-color: #598bb6;
+}
 body {
   background-color: rgb(184, 180, 180);
   margin: 0;
   padding: 0;
 }
 .body {
-  min-height: 100vh;
 	background-color: #598bb6;
 	font-family: 'Open Sans', sans-serif;
 	display: flex;
@@ -20,6 +22,7 @@ body {
 	margin: 0;
 }
 .nav {
+  margin: 0;
   display: flex;
   flex-flow: row wrap;
   list-style-type: none;
