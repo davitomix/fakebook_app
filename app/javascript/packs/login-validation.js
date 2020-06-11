@@ -1,16 +1,28 @@
 const FormChecker = (() => {
   const email = document.getElementById('user_email');
   const password = document.getElementById('user_password');
-  const alertBox = document.getElementById('alert-content');
+  const alertText = document.getElementById('alert-content');
+  const body = document.getElementById('body');
 
+  const injectAlertStyle = () => {
+    const alertBox = document.createElement('div');
+    alertBox.classList.add('alert-box');
+    alertBox.id = 'alert-box';
+    alertBox.classList.add('d-none');
+    alertBox.appendChild(alertText);
+    body.prepend(alertBox);
+    console.log(alertText.parentElement);
+  };
 
   const scanForm = () => {
-    if(alertBox.innerText === '') {
+    if(alertText.innerText === '') {
       scanFocus(email, 'Email');
       scanKey(email, 'Email');
       scanFocus(password, 'Password');
       scanKey(password, 'Password');
     } else {
+      const alertBox = document.getElementById('alert-box');
+      alertBox.classList.remove('d-none');
       scanItem(email, 'Email');
       scanKey(email, 'Email');
       scanItem(password, 'Password');
@@ -75,12 +87,14 @@ const FormChecker = (() => {
   };
 
   return {
-    scanForm
+    scanForm,
+    injectAlertStyle
   };
 })();
 
 const checker = FormChecker;
 
 const start = (() => {
+  checker.injectAlertStyle();
   checker.scanForm();
 })();
