@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_scope :user do
-    root :to => 'devise/sessions#new'
-  end
+  # devise_scope :user do
+  #   root :to => 'devise/sessions#new'
+  # end
+  root 'static_pages#home'
   get  '/home',   to: 'static_pages#home'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'

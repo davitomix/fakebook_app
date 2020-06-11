@@ -1,42 +1,41 @@
-<div class="body">
-  <div class="login-container">
-    <div class="header">
-      <h2>Sign up</h2>
-    </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="form-control">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
-        <i class="fa fa-check-circle"></i>
-        <i class="fa fa-exclamation-circle"></i>
-        <small>Error message</small>
-      </div>
-
-      <div class="form-control">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-        <i class="fa fa-check-circle"></i>
-        <i class="fa fa-exclamation-circle"></i>
-        <small>Error message</small>
-      </div>
-
-      <div class="form-control">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        <i class="fa fa-check-circle"></i>
-        <i class="fa fa-exclamation-circle"></i>
-        <small>Error message</small>
-      </div>
-
-      <div class="form-control">
-        <%= f.submit "Sign up", :class => "button" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+<div class="login-container">
+  <div class="header">
+    <h2>Sign up</h2>
   </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-control">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+      <i class="fa fa-check-circle"></i>
+      <i class="fa fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <i class="fa fa-check-circle"></i>
+      <i class="fa fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <i class="fa fa-check-circle"></i>
+      <i class="fa fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit "Sign up", :class => "button" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
 </div>
+
 
 <%= javascript_pack_tag 'signup-validation' %>
