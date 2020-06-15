@@ -1,23 +1,21 @@
-<div class="navbar">
-  <ul>
-    <% if user_signed_in? %>
-      <% if current_user.pending_followers.any? %>
-        <li><%= link_to "Pending Requests #{current_user.pending_followers.count}", users_path %></li>
-      <% end %>
-      <li><%= link_to 'Home', '#' %></li>
-      <li><%= link_to "Profile", '#' %></li>
-      <li><%= link_to 'Friends', posts_path %></li>
-      <li><%= link_to 'Comments', new_post_path %></li>
-      <li><%= link_to 'Notifications', users_path %></li>
-      <li><%= link_to 'About', users_path %></li>
-      <li><%= link_to 'Contact', users_path %></li>
-      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to 'Signup', new_user_registration_path %></li>
-      <li><%= link_to "Login in with Facebook", user_facebook_omniauth_authorize_path %></li>
-      <li><%= link_to 'About', '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-    <% end %>
-  </ul>
-</div>
+<nav class="navbar">
+  <div class="drop-box-cont t-2">
+    <div class="opt default">
+      <h3><i class="fa fa-bars"></i></h3>
+    </div>
+    <div class="opt  opt-1">
+      <h3>Option 1</h3>
+    </div>
+    <div class="opt  opt-2">
+      <h3>Option 2</h3>
+    </div>
+    <div class="opt  opt-3">
+      <h3>Option 3</h3>
+    </div>
+    <div class="opt  opt-4">
+      <h3>Option 4</h3>
+    </div>
+  </div>
+</nav>
 
+<%= javascript_pack_tag 'navbar' %>
