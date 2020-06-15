@@ -82,7 +82,7 @@ const FormChecker = (() => {
   const setErrorFor = (input, message) => {
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
+    formControl.className = 'form-ctl error';
     if (small != null) {
       small.innerText = message;
     }
@@ -90,7 +90,7 @@ const FormChecker = (() => {
   
   const setSuccessFor = (input) => {
     const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+    formControl.className = 'form-ctl success';
   };
     
   const isEmail = (email) => {

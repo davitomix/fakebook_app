@@ -5,7 +5,7 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.label :email %><br />
       <%= f.email_field :email, autocomplete: "email" %>
       <i class="fa fa-check-circle"></i>
@@ -13,7 +13,7 @@
       <small>Error message</small>
     </div>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "new-password" %>
       <i class="fa fa-check-circle"></i>
@@ -21,7 +21,7 @@
       <small>Error message</small>
     </div>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       <i class="fa fa-check-circle"></i>
@@ -29,7 +29,7 @@
       <small>Error message</small>
     </div>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.submit "Sign up", :class => "button" %>
     </div>
   <% end %>
