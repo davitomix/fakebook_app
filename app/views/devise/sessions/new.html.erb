@@ -4,7 +4,7 @@
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form"}) do |f| %>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.label :email %><br />
       <%= f.email_field :email, autocomplete: "email" %>
       <i class="fa fa-check-circle"></i>
@@ -12,7 +12,7 @@
       <small>Error message</small>
     </div>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "current-password" %>
       <i class="fa fa-check-circle"></i>
@@ -21,13 +21,13 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="form-control remember-me">
+      <div class="form-ctl remember-me">
         <%= f.label :remember_me %>
         <%= f.check_box :remember_me %>
       </div>
     <% end %>
 
-    <div class="form-control">
+    <div class="form-ctl">
       <%= f.submit "Log in", :class => "button" , :id => "submit-btn"%>
     </div>
   <% end %>
