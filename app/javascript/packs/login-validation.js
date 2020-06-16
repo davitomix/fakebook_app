@@ -11,7 +11,6 @@ const FormChecker = (() => {
     alertBox.classList.add('d-none');
     alertBox.appendChild(alertText);
     body.prepend(alertBox);
-    console.log(alertText.parentElement);
   };
 
   const scanForm = () => {
