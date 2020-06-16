@@ -1,2 +1,14 @@
 <%= render 'shared/navbar' %>
+<% if user_signed_in? %>
+  
+<% else %>
+  <div class="center jumbotron">
+    <h1>Fakebook</h1>
+    <h2>
+      A Facebook like social app built with Rails, Webpacker & ES6.
+    </h2>
+    <%= link_to 'Sign up now!', new_user_registration_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
+
 <%= javascript_pack_tag 'home' %>

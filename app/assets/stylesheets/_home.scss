@@ -1,0 +1,18 @@
+.jumbotron {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-lg {
+  margin-top: 20px;
+  background-color: #598bb6;
+  width: 50%;
+}
+
+.btn-lg:hover {
+  background-color: #4b7498;
+  color: black;
+}

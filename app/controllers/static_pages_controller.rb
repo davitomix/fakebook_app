@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_user!, except: %i[home]
   def home
-    @comments = Comment.all
-    @users = User.all
-    @posts = current_user.friends_and_own_posts
   end
 
   def about

@@ -14,6 +14,7 @@
 .nav-cust{
   margin: 10px;
   color: white;
+  background-color: #598bb6;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -23,12 +24,24 @@
   }
 }
 
+.dropdown-menu{
+  background-color: #598bb6;
+}
+
 .nav-item {
   width: 100%;
-  background-color: #1579F6;
+  background-color: #598bb6;
+  .nav-cust {
+    min-width: 75px;
+  }
 }
 
 .navbar {
   height: 50px;
   width: 100%;
+  background-color: #598bb6;
+}
+
+.navbar-nav {
+  height: 50px;
 }

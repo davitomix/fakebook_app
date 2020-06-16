@@ -3,6 +3,7 @@
 @import "bootstrap";
 @import "navbar";
 @import "auth";
+@import "home";
 
 html {
   box-sizing: border-box;
@@ -16,7 +17,6 @@ html {
 }
 
 body {
-  background-color: #598bb6;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;

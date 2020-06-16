@@ -14,8 +14,8 @@ const NoticeScan =  (() => {
   };
 
   const scan = () => {
+    const noticeBox = document.getElementById('notice-box');
     if(noticeText.innerText != '') {
-      const noticeBox = document.getElementById('notice-box');
       noticeBox.classList.remove('d-none');
     }
   };
@@ -23,21 +23,12 @@ const NoticeScan =  (() => {
   return {
       injectNoticeCont,
       scan
-  }
+  };
 })();
 
 const scanner = NoticeScan;
 
 const start = (() => {
-  // scanner.injectNoticeCont();
-  // scanner.scan();
-  Swal.fire({
-    title: 'Sucessfully Login',
-    showClass: {
-      popup: 'animate__animated animate__fadeInDown'
-    },
-    hideClass: {
-      popup: 'animate__animated animate__fadeOutUp'
-    }
-  });
+  scanner.injectNoticeCont();
+  scanner.scan();
 })();
