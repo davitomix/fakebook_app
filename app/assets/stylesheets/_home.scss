@@ -1,0 +1,123 @@
+.jumbotron {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-lg {
+  margin-top: 20px;
+  background-color: #598bb6;
+  width: 50%;
+}
+
+.btn-lg:hover {
+  background-color: #4b7498;
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  color: #598bb6;
+  a {
+    text-decoration: none;
+    color: #598bb6;
+  }
+  a:hover {
+    color: #4b7498;
+    text-decoration: none;
+  }
+}
+
+h3:last-of-type {
+  margin-bottom: 40px;
+}
+
+.user-info {
+  background-color: rgb(250, 242, 237);
+}
+
+.post-form {
+  background-color: rgb(206, 205, 205);
+}
+
+@media only screen and (max-width: 992px) {
+  .post-user-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .user-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin: 40px 0;
+        height: 175px;
+        width: 195px;
+        border-radius: 5px;
+      }
+    }
+    .post-form {
+      height: 500px;
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .post-user-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .user-info {
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      img {
+        margin: 40px 0;
+        height: 175px;
+        width: 195px;
+        border-radius: 5px;
+      }
+    }
+    .post-form {
+      width: 67%;
+    }
+  }
+}
+
+.post-form {
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .post-text {
+      width: 75%;
+      height: 60%;
+      margin-bottom: 10px;
+      textarea {
+        resize: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .post-submit {
+      width: 50%;
+      height: 15%;
+      margin-top: 10px;
+      input {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
