@@ -3,6 +3,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 const NoticeScan =  (() => {
   const noticeText = document.getElementById('notice');
+  const alertText = document.getElementById('alert-content');
 
   const injectNoticeCont = () => {
     const noticeBox = document.createElement('div');
@@ -13,15 +14,28 @@ const NoticeScan =  (() => {
     body.prepend(noticeBox);
   };
 
+  const injectAlertCont = () => {
+    const alertBox = document.createElement('div');
+    alertBox.classList.add('alert-home');
+    alertBox.id = 'alert-home';
+    alertBox.classList.add('d-none');
+    alertBox.appendChild(alertText);
+    body.prepend(alertBox);
+  };
+
   const scan = () => {
     const noticeBox = document.getElementById('notice-box');
+    const alertBox = document.createElement('div');
     if(noticeText.innerText != '') {
       noticeBox.classList.remove('d-none');
+    } else if(alertBox.innerText != '') {
+      alertBox.classList.remove('d-none');
     }
   };
 
   return {
       injectNoticeCont,
+      injectAlertCont,
       scan
   };
 })();
@@ -30,5 +44,6 @@ const scanner = NoticeScan;
 
 const start = (() => {
   scanner.injectNoticeCont();
+  scanner.injectAlertCont();
   scanner.scan();
 })();

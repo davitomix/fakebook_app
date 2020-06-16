@@ -26,6 +26,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'faker', '1.7.3'
 # devise to manage user login and signup
 gem 'devise'
+gem 'gravtastic'
 # omniauth-facebook to login with facebook account
 gem 'omniauth-facebook'
 # Use CoffeeScript for .coffee assets and views

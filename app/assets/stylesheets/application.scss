@@ -48,11 +48,21 @@ body {
   background-color: #e4796d;
   border: 2px solid #e74c3c;
   border-radius: 5px;
-  margin: 20px 0;
+  width: 100%;
+  padding: 10px 0;
   ul {
     list-style-type: none;
     text-align: start;
   }
+}
+
+.alert-home {
+  text-align: center;
+  background-color: #d5d560;
+  border: 2px solid #e7e73c;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .d-none {

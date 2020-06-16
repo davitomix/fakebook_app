@@ -34,6 +34,9 @@
   .nav-cust {
     min-width: 75px;
   }
+  .nav-cust.pending {
+    min-width: 150px;
+  }
 }
 
 .navbar {

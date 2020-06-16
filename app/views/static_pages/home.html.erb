@@ -1,6 +1,22 @@
 <%= render 'shared/navbar' %>
 <% if user_signed_in? %>
-  
+  <section class="post-user-section">
+    <div class="user-info">
+      <%= image_tag current_user.gravatar_url(:secure => true) %>
+      <h3>User:</h3>
+      <h3><%= link_to current_user.email, current_user%></h3>
+    </div>
+
+    <div class="post-form">
+      <%= render 'shared/post_form' %>
+    </div>
+  </section>
+
+  <div class="post-feed">
+  </div>
+
+  <div class="who-friend">
+  </div>
 <% else %>
   <div class="center jumbotron">
     <h1>Fakebook</h1>

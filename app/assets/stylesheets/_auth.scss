@@ -147,38 +147,11 @@
   .login-container {
     width: 90%;
   }
-  .post-user-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    .user-info {
-      background-color: seashell;
-      height: 400px;
-    }
-    .post-form {
-      background-color: silver;
-      height: 1000px;
-    }
-  }
 }
 
 @media (min-width: 993px) {
   .alert-box,
   .login-container {
     width: 700px;
-  }
-  .post-user-section {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 500px;
-    .user-info {
-      width: 40%;
-      background-color: seashell;
-    }
-    .post-form {
-      width: 60%;
-      background-color: silver;
-    }
   }
 }
