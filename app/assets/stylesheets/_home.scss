@@ -21,25 +21,6 @@
   color: black;
 }
 
-h3 {
-  text-align: center;
-  font-size: 20px;
-  width: 100%;
-  color: #598bb6;
-  a {
-    text-decoration: none;
-    color: #598bb6;
-  }
-  a:hover {
-    color: #4b7498;
-    text-decoration: none;
-  }
-}
-
-h3:last-of-type {
-  margin-bottom: 40px;
-}
-
 .user-info {
   background-color: white;
 }
@@ -65,6 +46,16 @@ h3:last-of-type {
         width: 195px;
         border-radius: 5px;
       }
+      span {
+        a {
+          text-decoration: none;
+          color: #598bb6;
+        }
+        a:hover {
+          color: #4b7498;
+          text-decoration: none;
+        }
+      }
     }
     .post-form {
       height: 500px;
@@ -89,10 +80,41 @@ h3:last-of-type {
         width: 195px;
         border-radius: 5px;
       }
+      span {
+        a {
+          text-decoration: none;
+          color: #598bb6;
+        }
+        a:hover {
+          color: #4b7498;
+          text-decoration: none;
+        }
+      }
     }
     .post-form {
       width: 67%;
     }
+  }
+}
+
+.user-info {
+  h3 {
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    color: #598bb6;
+    a {
+      text-decoration: none;
+      color: #598bb6;
+    }
+    a:hover {
+      color: #4b7498;
+      text-decoration: none;
+    }
+  }
+  
+  span:last-of-type {
+    margin-bottom: 40px;
   }
 }
 

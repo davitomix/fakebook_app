@@ -2,9 +2,7 @@
 <% if user_signed_in? %>
   <section class="post-user-section">
     <div class="user-info">
-      <%= image_tag current_user.gravatar_url(:secure => true) %>
-      <h3>User:</h3>
-      <h3><%= link_to current_user.email, current_user%></h3>
+      <%= render 'shared/user_info' %>
     </div>
 
     <div class="post-form">
