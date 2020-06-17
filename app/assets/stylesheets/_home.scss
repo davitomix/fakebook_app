@@ -6,14 +6,18 @@
   align-items: center;
 }
 
-.btn-lg {
+.btn-lg,
+.btn {
   margin-top: 20px;
   background-color: #598bb6;
+  border: 5px solid #598bb6;
   width: 50%;
 }
 
-.btn-lg:hover {
+.btn-lg:hover,
+.btn:hover {
   background-color: #4b7498;
+  border: 5px solid #4b7498;
   color: black;
 }
 
@@ -37,11 +41,11 @@ h3:last-of-type {
 }
 
 .user-info {
-  background-color: rgb(250, 242, 237);
+  background-color: #dfdfdf;
 }
 
 .post-form {
-  background-color: rgb(206, 205, 205);
+  background-color: #adcbd8;
 }
 
 @media only screen and (max-width: 992px) {
@@ -93,27 +97,33 @@ h3:last-of-type {
 }
 
 .post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   form {
+    border: 5px solid #598bb6;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     .post-text {
-      width: 75%;
+      width: 90%;
       height: 60%;
-      margin-bottom: 10px;
       textarea {
         resize: none;
         width: 100%;
         height: 100%;
+        border-radius: 5px;
       }
     }
     .post-submit {
-      width: 50%;
+      width: 90%;
       height: 15%;
-      margin-top: 10px;
+      margin-bottom: 20px;
       input {
         width: 100%;
         height: 100%;
