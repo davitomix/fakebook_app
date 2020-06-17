@@ -1,5 +1,4 @@
 .login-container {
-  margin-top: 50px;
   overflow: hidden;
   background-color: #fff;
   border-radius: 5px;
@@ -152,11 +151,17 @@
   .login-container {
     width: 90%;
   }
+  .login-container {
+    margin-top: 80px;
+  }
 }
 
 @media (min-width: 993px) {
   .alert-box,
   .login-container {
     width: 700px;
+  }
+  .login-container {
+    margin-top: 50px;
   }
 }
