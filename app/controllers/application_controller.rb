@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: %i[home about contact]
+  before_action :authenticate_user!, except: [:home, :about, :contact]
   before_action :configure_permitted_parameters, if: :devise_controller?, only: %i[update create]
   protect_from_forgery with: :exception
   require 'will_paginate/array'
