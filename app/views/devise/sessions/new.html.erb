@@ -4,7 +4,8 @@
     <h2>Log in</h2>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form"}) do |f| %>
-
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
     <div class="form-ctl">
       <%= f.label :email %><br />
       <%= f.email_field :email, autocomplete: "email" %>
