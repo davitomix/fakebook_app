@@ -13,6 +13,13 @@ const FormChecker = (() => {
       scanKey(password, 'Password');
       scanFocus(passwordConfirmation, 'PassConfirm');
       scanKey(passwordConfirmation, 'PassConfirm');
+    } else {
+      scanItem(email, 'Email');
+      scanKey(email, 'Email');
+      scanItem(password, 'Password');
+      scanKey(password, 'Password');
+      scanItem(passwordConfirmation, 'PassConfirm');
+      scanKey(passwordConfirmation, 'PassConfirm');
     }
   };
 

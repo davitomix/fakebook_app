@@ -42,7 +42,6 @@ body {
   width: 100%;
 }
 
-#error_explanation,
 .alert-box {
   text-align: center;
   background-color: #e4796d;
@@ -50,9 +49,25 @@ body {
   border-radius: 5px;
   width: 100%;
   padding: 10px 0;
+}
+
+#error_explanation {
+  h2 {
+    font-size: 18px;
+  }
+  text-align: center;
+  background-color: #e4796d;
+  border: 2px solid #e74c3c;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
   ul {
     list-style-type: none;
     text-align: start;
+    li {
+      padding-left: 5px;
+    }
   }
 }
 

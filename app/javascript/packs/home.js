@@ -3,39 +3,29 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 const NoticeScan =  (() => {
   const noticeText = document.getElementById('notice');
+  const noticeBox = document.getElementById('notice-box');
   const alertText = document.getElementById('alert-content');
-
-  const injectNoticeCont = () => {
-    const noticeBox = document.createElement('div');
-    noticeBox.classList.add('notice-box');
-    noticeBox.id = 'notice-box';
-    noticeBox.classList.add('d-none');
-    noticeBox.appendChild(noticeText);
-    body.prepend(noticeBox);
+  const alertBox = document.getElementById('alert-box');
+  alertBox.classList.remove('alert-box');
+  alertBox.classList.add('alert-home');
+  
+  const showAlertBox = () => {
+    alertBox.classList.remove('d-none');
   };
 
-  const injectAlertCont = () => {
-    const alertBox = document.createElement('div');
-    alertBox.classList.add('alert-home');
-    alertBox.id = 'alert-home';
-    alertBox.classList.add('d-none');
-    alertBox.appendChild(alertText);
-    body.prepend(alertBox);
+  const showNoticeBox = () => {
+    noticeBox.classList.remove('d-none');
   };
 
   const scan = () => {
-    const noticeBox = document.getElementById('notice-box');
-    const alertBox = document.createElement('div');
     if(noticeText.innerText != '') {
-      noticeBox.classList.remove('d-none');
-    } else if(alertBox.innerText != '') {
-      alertBox.classList.remove('d-none');
+      showNoticeBox();
+    } else if(alertText.innerText != '') {
+      showAlertBox();
     }
   };
 
   return {
-      injectNoticeCont,
-      injectAlertCont,
       scan
   };
 })();
@@ -43,7 +33,5 @@ const NoticeScan =  (() => {
 const scanner = NoticeScan;
 
 const start = (() => {
-  scanner.injectNoticeCont();
-  scanner.injectAlertCont();
   scanner.scan();
 })();
