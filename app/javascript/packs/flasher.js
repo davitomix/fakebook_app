@@ -4,6 +4,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 const flashScan =  (() => {
   const noticeText = document.getElementById('notice');
   const alertText = document.getElementById('alert-content');
+  const errorText = document.getElementById('error-h2')
   // failure
   const already_authenticated = "You are already signed in.";
   const inactive = "Your account is not activated yet.";
@@ -27,7 +28,7 @@ const flashScan =  (() => {
       icon: show,
       title: message,
       showConfirmButton: false,
-      timer: 1500
+      timer: 2000
     });
   };
 
@@ -67,6 +68,11 @@ const flashScan =  (() => {
         case invalid_email_or_pswd:
           triggerAlert('error', invalid_email_or_pswd);
           break;
+      }
+    }
+    if(errorText != null) {
+      if(errorText.innerText) {
+        triggerAlert('error', 'Error.');
       }
     }
   };
