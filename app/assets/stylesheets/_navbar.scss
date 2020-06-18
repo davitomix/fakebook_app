@@ -1,5 +1,4 @@
 #logo {
-  margin-right: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
@@ -31,17 +30,29 @@
 .nav-item {
   width: 100%;
   background-color: #598bb6;
-  .nav-cust {
-    min-width: 75px;
-  }
-  .nav-cust.pending {
-    min-width: 150px;
+  text-align: center;
+  .dropdown-menu.show {
+    text-align: center;
+    .nav-cust {
+      width: 100%;
+    }
   }
 }
 
 .navbar {
   width: 100%;
   background-color: #598bb6;
+  a {
+    padding: 2px 0;
+  }
+  .navbar-toggler,
+  .navbar-toggler.collapsed {
+    outline: none;
+    border: none;
+    span {
+      border: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -50,5 +61,20 @@
     .navbar-collapse {
       width: 100%;
     }
+  }
+  .nav-cust {
+    width: 100%;
+  }
+  #logo {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 993px) {
+  .nav-cust {
+    min-width: 75px;
+  }
+  .nav-cust.pending {
+    min-width: 150px;
   }
 }
