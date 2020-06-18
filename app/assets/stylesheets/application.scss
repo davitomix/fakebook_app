@@ -51,6 +51,15 @@ body {
   padding: 10px 0;
 }
 
+.alert-home {
+  text-align: center;
+  background-color: #d5d560;
+  border: 2px solid #e7e73c;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
+}
+
 #error_explanation {
   h2 {
     font-size: 18px;
@@ -69,15 +78,6 @@ body {
       padding-left: 5px;
     }
   }
-}
-
-.alert-home {
-  text-align: center;
-  background-color: #d5d560;
-  border: 2px solid #e7e73c;
-  border-radius: 5px;
-  width: 100%;
-  padding: 10px 0;
 }
 
 .d-none {
