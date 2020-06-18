@@ -14,20 +14,15 @@
             <li class="nav-item d-flex"><%= link_to "Friend Requests #{current_user.pending_followers.count}", users_path, class: "nav-cust pending" %></li>
           <% end %>
           <li class="nav-item d-flex"><%= link_to 'Notifications', users_path, class: "nav-cust" %></li>
+          <li class="nav-item d-flex"><%= link_to 'About', about_path, class: "nav-cust" %></li>
+          <li class="nav-item d-flex"><%= link_to 'Contact', contact_path, class: "nav-cust" %></li>
           <li class="nav-item d-flex"><%= link_to 'Logout', destroy_user_session_path, class: "nav-cust", method: :delete %></li>
         <% else %>
           <li class="nav-item d-flex"><%= link_to 'Sign Up', new_user_registration_path, class: "nav-cust" %></li>
           <li class="nav-item d-flex"><%= link_to 'Log In', new_user_session_path, class: "nav-cust" %></li>
+          <li class="nav-item d-flex"><%= link_to 'About', about_path, class: "nav-cust" %></li>
+          <li class="nav-item d-flex"><%= link_to 'Contact', contact_path, class: "nav-cust" %></li>
         <% end %>
-        <li class="nav-item dropdown mr-5">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a><%= link_to 'About', about_path, class: "nav-cust" %></a>
-              <div class="dropdown-divider"></div>
-              <a><%= link_to 'Contact', contact_path, class: "nav-cust" %></a>
-            </div>
-          </li>
       </ul>
     </div>
   </nav>

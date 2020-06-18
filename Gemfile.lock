@@ -96,7 +96,6 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gravtastic (3.2.6)
     guard (2.16.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -306,7 +305,6 @@ DEPENDENCIES
   devise
   faker (= 1.7.3)
   font-awesome-rails
-  gravtastic
   guard (~> 2.16, >= 2.16.1)
   jbuilder (~> 2.5)
   jquery-rails
