@@ -7,21 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-    />
   </head>
 
   <body id="body">
-    <div class="notice-box d-none" id="notice-box">
-      <p id="notice"><%= notice %></p>
+    <div class="container-fluid">
+      <div class="notice-box d-none" id="notice-box">
+        <p id="notice"><%= notice %></p>
+      </div>
+      <div class="alert-box d-none" id="alert-box">
+        <p id="alert-content" class="alert"><%= alert %></p>
+      </div>
+      <%= yield %>
     </div>
-    <div class="alert-box d-none" id="alert-box">
-      <p id="alert-content" class="alert"><%= alert %></p>
-    </div>
-    <%= yield %>
-
 
 
     <script>
