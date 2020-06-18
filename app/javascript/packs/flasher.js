@@ -20,15 +20,19 @@ const flashScan =  (() => {
   const signed_out = "Signed out successfully.";
   const already_signed_out =  "Signed out successfully.";
   //custom
-  const post_created = "Post was successfully created.";
   const invalid_email_or_pswd = "Invalid Email or Password.";
+  const post_liked = "Post liked.";
+  const post_unliked = "Post disliked.";
+  const post_created = "Post was successfully created.";
+  const post_updated = "Post was successfully updated.";
+  const post_deleted = "Post was successfully destroyed.";
 
   const triggerAlert = (show, message) => {
     Swal.fire({
       icon: show,
       title: message,
       showConfirmButton: false,
-      timer: 2000
+      timer: 1500
     });
   };
 
@@ -62,11 +66,23 @@ const flashScan =  (() => {
           triggerAlert('warning', unauthenticated);
           break;
         // Custom.
+        case invalid_email_or_pswd:
+          triggerAlert('error', invalid_email_or_pswd);
+          break;
+        case post_liked:
+          triggerAlert('success', post_liked);
+          break;
+        case post_unliked:
+          triggerAlert('success', post_unliked);
+          break;
         case post_created:
           triggerAlert('success', post_created);
           break;
-        case invalid_email_or_pswd:
-          triggerAlert('error', invalid_email_or_pswd);
+        case post_updated:
+          triggerAlert('success', post_updated);
+          break;
+        case post_deleted:
+          triggerAlert('success', post_deleted);
           break;
       }
     }
