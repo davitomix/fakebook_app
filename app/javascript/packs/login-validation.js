@@ -16,7 +16,6 @@ const FormChecker = (() => {
       scanFocus(password, 'Password');
       scanKey(password, 'Password');
     } else {
-      showAlertBox();
       scanItem(email, 'Email');
       scanKey(email, 'Email');
       scanItem(password, 'Password');
