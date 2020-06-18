@@ -246,6 +246,10 @@
     color: $gray-500;
     display: block;
     margin-left: 60px;
+    p {
+      display: inline;
+      color: gray;
+    }
   }
   .gravatar {
     float: left;

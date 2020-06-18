@@ -18,5 +18,10 @@
     <% else %>
       <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: post.id), method: :post %>
     <% end %>
+    <% if post.likes_count >= 1 %>
+    <p>
+      <%= pluralize(post.likes_count, "like") %>
+    </p>
+    <% end %>
   </span>
 </li>

@@ -5,4 +5,8 @@ class Post < ApplicationRecord
 
   validates :content, presence: true, length: { in: 1..1500 }
   validates :user, presence: true
+
+  def likes_count
+    liked_posts.where(post_id: id).count
+  end
 end
