@@ -20,6 +20,7 @@ const flashScan =  (() => {
   const already_signed_out =  "Signed out successfully.";
   //custom
   const post_created = "Post was successfully created.";
+  const invalid_email_or_pswd = "Invalid Email or Password.";
 
   const triggerAlert = (show, message) => {
     Swal.fire({
@@ -62,6 +63,9 @@ const flashScan =  (() => {
         // Custom.
         case post_created:
           triggerAlert('success', post_created);
+          break;
+        case invalid_email_or_pswd:
+          triggerAlert('error', invalid_email_or_pswd);
           break;
       }
     }

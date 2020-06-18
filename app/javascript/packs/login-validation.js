@@ -3,7 +3,6 @@ const FormChecker = (() => {
   const password = document.getElementById('user_password');
   const alertText = document.getElementById('alert-content');
   const alertBox = document.getElementById('alert-box');
-  const body = document.getElementById('body');
 
   const showAlertBox = () => {
     alertBox.classList.remove('d-none');
