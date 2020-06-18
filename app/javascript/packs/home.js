@@ -8,6 +8,10 @@ const NoticeScan =  (() => {
   const alertBox = document.getElementById('alert-box');
   alertBox.classList.remove('alert-box');
   alertBox.classList.add('alert-home');
+
+  const signed_in = "Signed in successfully.";
+  const signed_out = "Signed out successfully.";
+  const already_signed_out =  "Signed out successfully.";
   
   const showAlertBox = () => {
     alertBox.classList.remove('d-none');
@@ -19,7 +23,33 @@ const NoticeScan =  (() => {
 
   const scan = () => {
     if(noticeText.innerText != '') {
-      showNoticeBox();
+      switch (noticeText.innerText) {
+        case signed_in:
+          Swal.fire({
+            icon: 'success',
+            title: 'Logged in.',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          break;
+        case signed_out:
+          Swal.fire({
+            icon: 'success',
+            title: 'Successfully logged out.',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          break;
+        case already_signed_out:
+          Swal.fire({
+            icon: 'success',
+            title: 'Successfully logged out.',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          break;
+      }
+      // showNoticeBox();
     } else if(alertText.innerText != '') {
       showAlertBox();
     }

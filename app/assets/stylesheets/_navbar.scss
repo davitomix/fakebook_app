@@ -45,6 +45,11 @@
   background-color: #598bb6;
 }
 
-.navbar-nav {
-  height: 50px;
+@media only screen and (max-width: 992px) {
+  .navbar {
+    padding: 0;
+    .navbar-collapse {
+      width: 100%;
+    }
+  }
 }
