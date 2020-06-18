@@ -58,7 +58,24 @@
       }
     }
     .post-form {
+      width: 100%;
       height: 500px;
+    }
+  }
+  .feed-who-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .post-feed {
+      width: 100%;
+      background-color: lightblue;
+      order: 1;
+    }
+    .who-add {
+      width: 100%;
+      height: 500px;
+      background-color: lightgoldenrodyellow;
+      order: 2;
     }
   }
 }
@@ -93,6 +110,19 @@
     }
     .post-form {
       width: 67%;
+    }
+  }
+  .feed-who-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .post-feed {
+      width: 67%;
+      background-color: lightblue;
+    }
+    .who-add {
+      width: 33%;
+      background-color: lightgoldenrodyellow;
     }
   }
 }

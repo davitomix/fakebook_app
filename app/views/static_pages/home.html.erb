@@ -10,15 +10,16 @@
     </div>
   </section>
 
-  <div class="post-feed">
-    <ol>
-      <%= render @feed_items %>
-    </ol>
-    <%= will_paginate @feed_items %>
-  </div>
-
-  <div class="who-friend">
-  </div>
+  <section class="feed-who-section">
+    <div class="who-add">
+    </div>
+    <div class="post-feed">
+      <ol>
+        <%= render @feed_items %>
+      </ol>
+      <%= will_paginate @feed_items %>
+    </div>
+  </section>
 <% else %>
   <div class="center jumbotron">
     <h1>Fakebook</h1>
