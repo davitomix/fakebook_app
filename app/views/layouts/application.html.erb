@@ -10,15 +10,13 @@
   </head>
 
   <body id="body">
-    <div class="container-fluid">
-      <div class="notice-box d-none" id="notice-box">
-        <p id="notice"><%= notice %></p>
-      </div>
-      <div class="alert-box d-none" id="alert-box">
-        <p id="alert-content" class="alert"><%= alert %></p>
-      </div>
-      <%= yield %>
+    <div class="notice-box d-none" id="notice-box">
+      <p id="notice"><%= notice %></p>
     </div>
+    <div class="alert-box d-none" id="alert-box">
+      <p id="alert-content" class="alert"><%= alert %></p>
+    </div>
+    <%= yield %>
 
 
     <script>

@@ -1,6 +1,5 @@
 <%= render 'shared/navbar' %>
 <% if user_signed_in? %>
-<div class="container-fluid">
   <section class="post-user-section">
     <div class="user-info">
       <%= render 'shared/user_info' %>
@@ -29,5 +28,5 @@
     <%= link_to 'Sign up now!', new_user_registration_path, class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
-</div>
+
 <%= javascript_pack_tag 'home' %>
