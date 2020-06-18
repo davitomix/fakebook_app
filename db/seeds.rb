@@ -27,3 +27,12 @@ users = User.all
     user.posts.create(content: content)
   end
 end
+
+u1 = User.first
+
+for i in (2..8)
+  u1.following_friends.new(requestee_id: i, status: "accepted").save
+  Friendship.new(requester_id: i, requestee_id: 1, status: "accepted").save
+end
+
+

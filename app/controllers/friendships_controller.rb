@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
 
   def create
     following = current_user.following_friends.new(friendship_params)
-    flash[:alert] = "Couldn't befriend #{friendship_params[:requestee_id]}" unless following.save
+    flash[:alert] = "Couldn't be friend #{friendship_params[:requestee_id]}" unless following.save
     redirect_to users_path
   end
 

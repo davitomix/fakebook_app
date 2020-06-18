@@ -1,13 +1,27 @@
 <li id="post-<%= post.id %>">
+  <%= link_to gravatar_for(post.user, size: 50), post.user %>
   <span class="user"><%= link_to post.user.email, post.user %></span>
   <span class="content">
     <%= post.content %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
-    <% if current_user %>
-      <%= link_to "delete", post, method: :delete,
+    <%= link_to 'Show', post %>
+    <% if current_user == post.user %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to "Delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
+    <% end %>
+    <% pre_like = post.liked_posts.find { |liked_post| liked_post.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= link_to 'Dislike', post_like_post_path(id: current_user.id, post_id: post.id), method: :delete %>
+    <% else %>
+      <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: post.id), method: :post %>
+    <% end %>
+    <% if post.likes_count >= 1 %>
+    <p>
+      <%= pluralize(post.likes_count, "like") %>
+    </p>
     <% end %>
   </span>
 </li>

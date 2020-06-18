@@ -50,13 +50,12 @@
         padding: 10px;
         margin-top: 20px;
         width: 100%;
-      }
-
-      .button:hover {
-        color: black;
-        cursor: pointer;
-        background-color: #4b7498;
-        border: 5px solid #4b7498;
+        &:hover {
+          color: black;
+          cursor: pointer;
+          background-color: #4b7498;
+          border: 5px solid #4b7498;
+        }
       }
     }
     .form-ctl.success input {

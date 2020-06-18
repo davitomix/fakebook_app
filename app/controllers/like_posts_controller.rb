@@ -7,8 +7,9 @@ class LikePostsController < ApplicationController
       flash[:notice] = "You can't like more than once"
     else
       @post.liked_posts.create(user: current_user)
+      flash[:notice] = 'Post liked.'
     end
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   def destroy
@@ -16,8 +17,9 @@ class LikePostsController < ApplicationController
       flash[:notice] = "Can't unlike"
     else
       @liked_post.destroy
+      flash[:notice] = 'Post disliked.'
     end
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private
