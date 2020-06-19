@@ -9,7 +9,7 @@ class LikePostsController < ApplicationController
       @post.liked_posts.create(user: current_user)
       flash[:notice] = 'Post liked.'
     end
-    redirect_to root_path
+    redirect_to @post
   end
 
   def destroy
@@ -19,7 +19,7 @@ class LikePostsController < ApplicationController
       @liked_post.destroy
       flash[:notice] = 'Post disliked.'
     end
-    redirect_to root_path
+    redirect_to @post
   end
 
   private

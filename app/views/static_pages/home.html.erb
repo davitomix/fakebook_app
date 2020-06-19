@@ -12,12 +12,17 @@
 
   <section class="feed-who-section">
     <div class="who-add">
+      <h3 class="section-name"">People you may know</h3>
+      <ol class="users-home">
+        <%= render @who_friends %>
+      </ol>
+      <%= will_paginate @who_friends, :param_name => 'who_friend_page' %>
     </div>
     <div class="post-feed">
       <ol class="microposts">
         <%= render @feed_items %>
       </ol>
-      <%= will_paginate @feed_items %>
+      <%= will_paginate @feed_items, :param_name => 'feed_items_page' %>
     </div>
   </section>
 <% else %>

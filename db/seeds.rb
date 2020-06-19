@@ -21,7 +21,7 @@ User.create!(email: 'example@railstutorial.org',
 end
 
 users = User.all
-10.times do
+15.times do
   users.each do |user|
     content = Faker::Lorem.sentence(15)
     user.posts.create(content: content)

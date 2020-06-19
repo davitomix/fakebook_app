@@ -1,0 +1,4 @@
+<%= link_to gravatar_for(@post.user), @post.user %>
+      <h3><%= @post.user.email %></h3>
+      <span><%= link_to "View profile", @post.user %></span>
+      <span class="mx-auto"><%= pluralize(@post.user.posts.count, "post") %></span>
