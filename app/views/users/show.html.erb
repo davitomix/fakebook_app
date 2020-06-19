@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <p>Email: <%= @user.email %></p>
 
 <% if @user.posts.count > 0 %>
@@ -10,13 +11,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @user.posts.each do | post | %>
-        <tr>
-          <td><%= post.content %></td>
-          <td><%= post.created_at %></td>
-          <td><%= link_to 'Show', post %></td>
-        </tr>
-      <% end %>
+      <ol class="microposts">
+        <%= render @posts_items %>
+      </ol>
+    <%= will_paginate @posts_items %>
     </tbody>
   </table>
 <% end %>
