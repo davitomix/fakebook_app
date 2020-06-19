@@ -5,29 +5,10 @@
 </p>
 
 <% if @post.liked_posts.count > 0 %>
-  <table>
-    <thead>
-      <tr>
-        <th>Likes <%= @post.liked_posts.count %></th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @post.liked_posts.each do | ul | %>
-        <tr>
-          <td>Liked by</td>
-          <td><%= ul.user.email %></td>
-          <td><%= link_to 'Show', ul.user %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <p>
+    <%= pluralize(@post.liked_posts.count, "like") %>
+  </p>
 <% end %>
-
-<p>
-  <strong>Email:</strong>
-  <%= @post.user.email %>
-</p>
 
 <%= render 'comments/comment' %>
 

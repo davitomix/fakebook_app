@@ -26,22 +26,8 @@
   </table>
 
   <% if comment.like_comments.count > 0 %>
-    <table>
-      <thead>
-        <tr>
-          <th>Likes <%= comment.like_comments.count %></th>
-          <th colspan="1"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% comment.like_comments.each do | ul | %>
-          <tr>
-            <td>Liked by</td>
-            <td><%= ul.user.email %></td>
-            <td><%= link_to 'Show', ul.user %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <p>
+      <%= pluralize(comment.like_comments.count, "like") %>
+    </p>
   <% end %>
 <% end %>
