@@ -5,9 +5,14 @@
   <%= @post.content %>
 </p>
 
-<% if @post.liked_posts.count > 0 %>
+<% if @post.likes_count > 0 %>
   <p>
-    <%= pluralize(@post.liked_posts.count, "like") %>
+    <%= pluralize(@post.likes_count, "like") %>
+  </p>
+<% end %>
+<% if @post.comments_count > 0 %>
+  <p>
+    <%= pluralize(@post.comments_count, "comment") %>
   </p>
 <% end %>
 

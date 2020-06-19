@@ -9,4 +9,8 @@ class Post < ApplicationRecord
   def likes_count
     liked_posts.where(post_id: id).count
   end
+
+  def comments_count
+    comments.where(post_id: id).count
+  end
 end
