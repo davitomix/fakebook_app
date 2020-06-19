@@ -53,6 +53,10 @@ class User < ApplicationRecord
     # This will produce SQL query with IN. Something like: select * from posts where user_id IN (1,45,874,43);
   end
 
+  def current_friends
+    (User.where(id: active_following) + User.where(id: id))
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
