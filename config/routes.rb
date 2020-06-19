@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :like_comments, only: %i[create destroy]
     end
   end
-  resources :users, only: %I[index show]
+  resources :users, only: %i[index show]
   get 'friendships/create'
   get 'friendships/destroy'
   get 'friendships/update' => 'friendships#update', status: :accepted

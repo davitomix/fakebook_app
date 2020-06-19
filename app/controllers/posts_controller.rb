@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = current_user.friends_and_own_posts
+    redirect_to current_user
   end
 
   # GET /posts/1
