@@ -12,7 +12,8 @@
 
   <section class="feed-who-section">
     <div class="who-add">
-      <ol class="microposts">
+      <h3 class="section-name"">People you may know</h3>
+      <ol class="users-home">
         <%= render @who_friends %>
       </ol>
       <%= will_paginate @who_friends, :param_name => 'who_friend_page' %>
