@@ -35,4 +35,12 @@ for i in (2..8)
   Friendship.new(requester_id: i, requestee_id: 1, status: "accepted").save
 end
 
+posts = Post.all
+posts.each do |post|
+  users.each do |user|
+    post.liked_posts.create(user: user)
+    content = Faker::Lorem.sentence(15)
+    post.comments.create(content: content, user_id: user.id)
+  end
+end
 
