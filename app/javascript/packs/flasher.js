@@ -26,6 +26,9 @@ const flashScan =  (() => {
   const post_created = "Post was successfully created.";
   const post_updated = "Post was successfully updated.";
   const post_deleted = "Post was successfully destroyed.";
+  const comment_created = "Comment was successfully created.";
+  const comment_liked = "Comment liked.";
+  const comment_unliked = "Comment disliked.";
 
   const triggerAlert = (show, message) => {
     Swal.fire({
@@ -83,6 +86,15 @@ const flashScan =  (() => {
           break;
         case post_deleted:
           triggerAlert('success', post_deleted);
+          break;
+        case comment_created:
+          triggerAlert('success', comment_created);
+          break;
+        case comment_liked:
+          triggerAlert('success', comment_liked);
+          break;
+        case comment_unliked:
+          triggerAlert('success', comment_unliked);
           break;
       }
     }

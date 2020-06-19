@@ -20,9 +20,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       redirect_to @comment.post
+      flash[:notice] = 'Comment was successfully created.'
     else
-      flash.now[:danger] = 'error'
-      redirect_back(fallback_location: root_path)
+      flash[:notice] = 'Internal Error.'
+      redirect_back(fallback_location: @comment.post)
     end
   end
 
