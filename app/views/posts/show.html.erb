@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar' %>
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
@@ -44,4 +44,3 @@
 <% else %>
   <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: @post.id), method: :post %>
 <% end %>
-<%= link_to 'Back', current_user %>
