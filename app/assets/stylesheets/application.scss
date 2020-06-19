@@ -4,6 +4,7 @@
 @import "navbar";
 @import "auth";
 @import "home";
+@import "post-page";
 
 html {
   box-sizing: border-box;
@@ -77,4 +78,10 @@ body {
 
 .d-none {
   display: none;
+}
+
+.border-to-gravatar {
+  img {
+    border-radius: 5px;
+  }
 }

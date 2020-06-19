@@ -1,20 +1,28 @@
 <%= render 'shared/navbar' %>
-<%= render 'shared/user_post' %>
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="profile-post-container">
+  <div class="post-user">
+    <%= render 'shared/user_post' %>
+  </div>
 
-<% if @post.likes_count > 0 %>
-  <p>
-    <%= pluralize(@post.likes_count, "like") %>
-  </p>
-<% end %>
-<% if @post.comments_count > 0 %>
-  <p>
-    <%= pluralize(@post.comments_count, "comment") %>
-  </p>
-<% end %>
+  <div class="post-content">
+    <div class="content-post">
+      <h3>Post:</h3>
+      <p><%= @post.content %></p>
+    </div>
+    <div class="likes-comments">
+      <% if @post.likes_count > 0 %>
+        <div>
+          <%= pluralize(@post.likes_count, "like") %>
+        </div>
+      <% end %>
+      <% if @post.comments_count > 0 %>
+        <div>
+          <%= pluralize(@post.comments_count, "comment") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <%= render 'comments/comment' %>
 

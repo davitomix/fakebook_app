@@ -44,9 +44,6 @@
       justify-content: center;
       img {
         margin: 40px 0;
-        height: 175px;
-        width: 195px;
-        border-radius: 5px;
       }
       span {
         a {
@@ -108,9 +105,6 @@
       justify-content: flex-start;
       img {
         margin: 40px 0;
-        height: 175px;
-        width: 195px;
-        border-radius: 5px;
       }
       span {
         a {
@@ -142,15 +136,6 @@
       align-items: center;
       .section-name {
         padding: 15px 5px;
-      }
-    }
-  }
-
-  .users-home {
-    li { 
-      .gravatar {
-        width: 100px;
-        height: 100px;
       }
     }
   }

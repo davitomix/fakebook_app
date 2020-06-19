@@ -1,5 +1,5 @@
 <li id="user-<%= user.id %>">
-  <%= link_to gravatar_for(user), user %>
+  <%= link_to gravatar_for(user, :size => 80), user, { :class=>"border-to-gravatar" } %>
   <div class="user-c-1">
     <div>
       <h5><%= user.email %></h5>

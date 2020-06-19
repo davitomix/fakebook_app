@@ -23,7 +23,7 @@ end
 users = User.all
 15.times do
   users.each do |user|
-    content = Faker::Lorem.sentence(15)
+    content = Faker::Lorem.sentence(45)
     user.posts.create(content: content)
   end
 end
