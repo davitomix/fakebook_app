@@ -1,4 +1,4 @@
-<%= link_to gravatar_for(current_user), current_user %>
+<%= link_to gravatar_for(current_user, :size => 180), current_user, { :class=>"border-to-gravatar" } %>
       <h3><%= current_user.email %></h3>
       <span><%= link_to "View my profile", current_user %></span>
       <span class="mx-auto"><%= pluralize(current_user.posts.count, "post") %></span>

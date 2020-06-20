@@ -1,43 +1,13 @@
 <%= render 'shared/navbar' %>
-<p>Email: <%= @user.email %></p>
+<div class="profile-user">
+  <ol>
+    <%= render 'shared/user_profile' %>
+  </ol>
+</div>
 
 <% if @user.posts.count > 0 %>
-  <table> User Posts
-    <thead>
-      <tr>
-        <th>Content</th>
-        <th>Created at</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <ol class="microposts">
-        <%= render @posts_items %>
-      </ol>
-    <%= will_paginate @posts_items %>
-    </tbody>
-  </table>
+  <ol class="microposts">
+    <%= render @posts_items %>
+  </ol>
+  <%= will_paginate @posts_items %>
 <% end %>
-
-<% if @user.liked_posts.count > 0 %>
-  <table> Liked posts
-    <thead>
-      <tr>
-        <th>Content</th>
-        <th>Created at</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.liked_posts.each do | lp | %>
-        <tr>
-          <td><%= lp.post.content %></td>
-          <td><%= lp.post.created_at %></td>
-          <td><%= link_to 'Show', lp.post %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<%= link_to 'Back', users_path %>

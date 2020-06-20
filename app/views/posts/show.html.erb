@@ -1,28 +1,41 @@
 <%= render 'shared/navbar' %>
-<%= render 'shared/user_post' %>
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="profile-post-container">
+  <div class="post-user">
+    <%= render 'shared/user_post' %>
+  </div>
 
-<% if @post.liked_posts.count > 0 %>
-  <p>
-    <%= pluralize(@post.liked_posts.count, "like") %>
-  </p>
-<% end %>
-
-<%= render 'comments/comment' %>
-
-<%= render 'comment_form' %>
-
-<% if current_user == @post.user %>
+  <div class="post-content">
+    <div class="content-post">
+      <h3>Post:</h3>
+      <p><%= @post.content %></p>
+    </div>
+    <div class="likes-comments">
+      <% if @post.likes_count > 0 %>
+        <p><%= pluralize(@post.likes_count, "like") %></p>
+      <% end %>
+      <% if @post.comments_count > 0 %>
+        <p><%= pluralize(@post.comments_count, "comment") %></p>
+      <% end %>
+      <% if current_user == @post.user %>
       <%= link_to 'Edit', edit_post_path(@post) %>
       <%= link_to "Delete", @post, method: :delete,
                                        data: { confirm: "You sure?" } %>
-<% end %>
-<% pre_like = @post.liked_posts.find { |liked_post| liked_post.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= link_to 'Dislike', post_like_post_path(id: current_user.id, post_id: @post.id), method: :delete %>
-<% else %>
-  <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: @post.id), method: :post %>
-<% end %>
+      <% end %>
+      <% pre_like = @post.liked_posts.find { |liked_post| liked_post.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= link_to 'Dislike', post_like_post_path(id: current_user.id, post_id: @post.id), method: :delete %>
+      <% else %>
+        <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: @post.id), method: :post %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<ol class="microposts comments">
+  <%= render @comments %>
+</ol>
+<%= will_paginate @comments, :param_name => 'comments_page' %>
+
+
+
+<%= render 'comment_form' %>
+

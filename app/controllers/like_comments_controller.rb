@@ -7,6 +7,7 @@ class LikeCommentsController < ApplicationController
       flash[:notice] = "You can't like more than once"
     else
       @comment.like_comments.create(user: current_user)
+      flash[:notice] = 'Comment liked.'
     end
     redirect_to @comment.post
   end
@@ -16,6 +17,7 @@ class LikeCommentsController < ApplicationController
       flash[:notice] = "Can't unlike"
     else
       @like_comment.destroy
+      flash[:notice] = 'Comment disliked.'
     end
     redirect_to @comment.post
   end

@@ -23,7 +23,7 @@ end
 users = User.all
 15.times do
   users.each do |user|
-    content = Faker::Lorem.sentence(15)
+    content = Faker::Lorem.sentence(45)
     user.posts.create(content: content)
   end
 end
@@ -35,4 +35,20 @@ for i in (2..8)
   Friendship.new(requester_id: i, requestee_id: 1, status: "accepted").save
 end
 
+posts = Post.all
+
+posts.each do |post|
+  users.each do |user|
+    post.liked_posts.create(user: user)
+    content = Faker::Lorem.sentence(25)
+    post.comments.create(content: content, user_id: user.id)
+  end
+end
+
+posts.each do |post|
+  users.each do |user|
+    content = Faker::Lorem.sentence(25)
+    post.comments.create(content: content, user_id: user.id)
+  end
+end
 

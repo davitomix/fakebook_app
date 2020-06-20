@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments_post.sort_by(&:created_at).reverse
+    @comments = @comments.take(20).paginate(page: params[:comments_page], per_page: 10)
   end
 
   # GET /posts/new
