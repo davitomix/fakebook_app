@@ -36,10 +36,18 @@ for i in (2..8)
 end
 
 posts = Post.all
+
 posts.each do |post|
   users.each do |user|
     post.liked_posts.create(user: user)
-    content = Faker::Lorem.sentence(15)
+    content = Faker::Lorem.sentence(25)
+    post.comments.create(content: content, user_id: user.id)
+  end
+end
+
+posts.each do |post|
+  users.each do |user|
+    content = Faker::Lorem.sentence(25)
     post.comments.create(content: content, user_id: user.id)
   end
 end

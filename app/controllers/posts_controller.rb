@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments_post.sort_by(&:created_at).reverse
-    @comments = @comments.take(10).paginate(page: params[:comments_page], per_page: 5)
+    @comments = @comments.take(20).paginate(page: params[:comments_page], per_page: 10)
   end
 
   # GET /posts/new

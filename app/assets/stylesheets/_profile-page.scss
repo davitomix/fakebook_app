@@ -1,0 +1,16 @@
+.profile-user {
+  ol {
+    list-style: none;
+    li {
+      background-color: $bg-white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      a {
+        padding: 40px 0;
+      }
+    }
+  }
+}
