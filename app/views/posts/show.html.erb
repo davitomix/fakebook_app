@@ -11,14 +11,10 @@
     </div>
     <div class="likes-comments">
       <% if @post.likes_count > 0 %>
-        <div>
-          <%= pluralize(@post.likes_count, "like") %>
-        </div>
+        <p><%= pluralize(@post.likes_count, "like") %></p>
       <% end %>
       <% if @post.comments_count > 0 %>
-        <div>
-          <%= pluralize(@post.comments_count, "comment") %>
-        </div>
+        <p><%= pluralize(@post.comments_count, "comment") %></p>
       <% end %>
     </div>
   </div>

@@ -4,33 +4,29 @@ $bg-blue: #598bb6;
 $bg-blue-hover: #4b7498;
 
 .profile-post-container {
-  background-color: $bg-white;
+  background-color: $bg-gray;
   width: 100%;
   display: flex;
-  flex-direction: row;
   .post-user {
+    background-color: $bg-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    a {
-      img {
-        margin: 40px 0;
-      }
-    }
+    text-align: center;
     span {
       margin: 10px 0;
     }
   }
   .post-content {
+    display: flex;
     text-align: justify;
+    align-self: center;
     background-color: $bg-gray;
     flex-direction: column;
     .content-post{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
     .likes-comments {
       display: flex;
@@ -40,9 +36,63 @@ $bg-blue-hover: #4b7498;
 }
 
 @media only screen and (max-width: 992px) {
-
+  .profile-post-container {
+    flex-direction: column;
+    .post-user {
+      h3 {
+        font-size: 1.75rem;
+      }
+      a {
+        img {
+          margin: 40px 0;
+        }
+      }
+    }
+    .post-content{
+      .content-post{
+        h3 {
+          padding: 5px 10px;
+        }
+        p {
+          padding: 5px 10px;
+        }
+      }
+      .likes-comments {
+        p {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 993px) {
-
+  .profile-post-container {
+    flex-direction: row;
+    .post-user {
+      h3 {
+        font-size: 1rem;
+      }
+      a {
+        img {
+          margin: 40px 80px;
+        }
+      }
+    }
+    .post-content {
+      .content-post{
+        h3 {
+          padding: 10px 20px;
+        }
+        p {
+          padding: 10px 20px;
+        }
+      }
+      .likes-comments {
+        p {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
 }

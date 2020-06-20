@@ -45,16 +45,6 @@
       img {
         margin: 40px 0;
       }
-      span {
-        a {
-          text-decoration: none;
-          color: #598bb6;
-        }
-        a:hover {
-          color: #4b7498;
-          text-decoration: none;
-        }
-      }
     }
     .post-form {
       width: 100%;
@@ -105,16 +95,6 @@
       justify-content: flex-start;
       img {
         margin: 40px 0;
-      }
-      span {
-        a {
-          text-decoration: none;
-          color: #598bb6;
-        }
-        a:hover {
-          color: #4b7498;
-          text-decoration: none;
-        }
       }
     }
     .post-form {
@@ -183,6 +163,15 @@
   
   span:last-of-type {
     margin-bottom: 40px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #598bb6;
+  &:hover {
+    color: #4b7498;
+    text-decoration: none;
   }
 }
 
@@ -260,24 +249,17 @@
 .microposts {
   list-style: none;
   padding: 0;
+  text-align: center;
   li {
     border: 5px solid #598bb6dd;
     border-radius: 3px;
     padding: 10px 10px;
     margin: 5px 15px;
-    span {
-      a {
-        padding: 0 5px;
-      }
-    }
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
   }
   .content {
+    text-align: justify;
+    margin: auto;
     display: block;
-    margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -286,7 +268,7 @@
   .timestamp {
     color: $gray-500;
     display: block;
-    margin-left: 60px;
+    text-align: left;
     p {
       display: inline;
       color: gray;

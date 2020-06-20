@@ -1,6 +1,6 @@
 <li id="post-<%= post.id %>">
   <%= link_to gravatar_for(post.user, :size => 80), post.user, { :class=>"border-to-gravatar" } %>
-  <span class="user"><%= link_to post.user.email, post.user %></span>
+  <span><%= link_to post.user.email, post.user %></span>
   <span class="content">
     <%= post.content %>
   </span>
