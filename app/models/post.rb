@@ -13,4 +13,8 @@ class Post < ApplicationRecord
   def comments_count
     comments.where(post_id: id).count
   end
+
+  def comments_post
+    comments.where(post_id: id)
+  end
 end

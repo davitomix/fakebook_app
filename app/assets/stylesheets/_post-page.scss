@@ -60,6 +60,12 @@ $bg-blue-hover: #4b7498;
       .likes-comments {
         p {
           padding-left: 10px;
+          &:last-of-type{
+            padding-right: 10px;
+          }
+        }
+        a {
+          padding: 0 5px;
         }
       }
     }
@@ -91,8 +97,21 @@ $bg-blue-hover: #4b7498;
       .likes-comments {
         p {
           padding-left: 20px;
+          &:last-of-type{
+            padding-right: 20px;
+          }
+        }
+        a {
+          padding: 0 5px;
         }
       }
     }
+  }
+}
+
+.microposts.comments {
+  width: 100%;
+  .gravatar {
+    margin-top: 0;
   }
 }

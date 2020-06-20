@@ -1,33 +1,21 @@
-<% @post.comments.each do |comment| %>
-  <table>
-    <thead>
-      <tr>
-        <th>Commented by</th>
-        <th>Comment</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><%= comment.user.email %></td>
-          <td><%= comment.content %></td>
-          <td>
-            <span >
-              <% pre_like = comment.like_comments.find { |liked_comment| liked_comment.user_id == current_user.id} %>
-              <% if pre_like %>
-                <%= link_to 'Dislike', post_comment_like_comment_path(id: current_user.id, comment_id: comment.id, post_id: comment.post.id), method: :delete %>
-              <% else %>
-                <%= link_to 'Like', post_comment_like_comments_path(id: current_user.id, comment_id: comment.id, post_id: comment.post.id), method: :post %>
-              <% end %>
-            </span>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <% if comment.like_comments.count > 0 %>
-    <p>
-      <%= pluralize(comment.like_comments.count, "like") %>
-    </p>
-  <% end %>
-<% end %>
+<li>
+  <%= link_to gravatar_for(comment.user, :size => 70), comment.user, { :class=>"border-to-gravatar" } %>
+  <span><%= link_to comment.user.email, comment.user %></span>
+  <span class="content">
+    <%= comment.content %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    <% if comment.like_comments.count > 0 %>
+      <p>
+        <%= pluralize(comment.like_comments.count, "like") %>
+      </p>
+    <% end %>
+    <% pre_like = comment.like_comments.find { |liked_comment| liked_comment.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= link_to 'Dislike', post_comment_like_comment_path(id: current_user.id, comment_id: comment.id, post_id: comment.post.id), method: :delete %>
+    <% else %>
+      <%= link_to 'Like', post_comment_like_comments_path(id: current_user.id, comment_id: comment.id, post_id: comment.post.id), method: :post %>
+    <% end %>
+  </span>
+</li>
