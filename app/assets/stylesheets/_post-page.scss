@@ -52,16 +52,19 @@ $bg-blue-hover: #4b7498;
     .post-content{
       .content-post{
         h3 {
-          padding: 5px 10px;
+          padding: 5px 30px;
         }
         p {
-          padding: 5px 10px;
+          padding: 5px 30px;
         }
       }
       .likes-comments {
         p {
           padding-left: 10px;
-          &:last-of-type{
+          &:first-of-type {
+            padding-left: 30px;
+          }
+          &:last-of-type {
             padding-right: 10px;
           }
         }
@@ -114,5 +117,19 @@ $bg-blue-hover: #4b7498;
   width: 100%;
   .gravatar {
     margin-top: 0;
+  }
+}
+
+.comment-form {
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .comment-button {
+      align-self: center;
+    }
   }
 }

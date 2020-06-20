@@ -1,6 +1,8 @@
-<%= form_for([@post, @post.comments.build]) do |p| %>
-  <%= p.label :comment %>
-  <%= p.text_area :content, class: "form-control" %>
-  <%= p.hidden_field :post_id %>
-  <%= p.submit 'Submit', class: "btn btn-primary" %>
-<% end %>
+<div class="comment-form">
+  <%= form_for([@post, @post.comments.build]) do |p| %>
+    <%= p.label :comment %>
+    <%= p.text_area :content, class: "form-control" %>
+    <%= p.hidden_field :post_id %>
+    <%= p.submit 'Submit', class: "btn btn-primary button comment-button" %>
+  <% end %>
+</div>
