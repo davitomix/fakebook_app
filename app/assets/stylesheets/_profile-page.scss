@@ -1,8 +1,13 @@
+@import "vars";
+
 .profile-user {
+  width: 100%;
+  background-color: $bg-gray;
   ol {
+    background-color: $bg-gray;
     list-style: none;
     li {
-      background-color: $bg-white;
+      background-color: $bg-gray;
       display: flex;
       flex-direction: column;
       justify-content: center;

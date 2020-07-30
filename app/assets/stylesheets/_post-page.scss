@@ -1,7 +1,4 @@
-$bg-white: white;
-$bg-gray: #e8e8e8;
-$bg-blue: #598bb6;
-$bg-blue-hover: #4b7498;
+@import "vars";
 
 .profile-post-container {
   background-color: $bg-gray;
@@ -122,6 +119,7 @@ $bg-blue-hover: #4b7498;
 
 .comment-form {
   width: 100%;
+  max-height: 290px;
   padding: 20px 30px;
   display: flex;
   form {
@@ -130,6 +128,10 @@ $bg-blue-hover: #4b7498;
     flex-direction: column;
     .comment-button {
       align-self: center;
+    }
+    textarea {
+      resize: none;
+      height: 150px;
     }
   }
 }
