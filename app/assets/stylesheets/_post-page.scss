@@ -71,6 +71,12 @@
       }
     }
   }
+  .microposts.comments {
+    width: 100%;
+    .gravatar {
+      margin-top: 0;
+    }
+  }
 }
 
 @media (min-width: 993px) {
@@ -108,18 +114,23 @@
       }
     }
   }
-}
-
-.microposts.comments {
-  width: 100%;
-  .gravatar {
-    margin-top: 0;
+  .microposts.comments {
+    width: 90%;
+    .gravatar {
+      margin-top: 0;
+    }
   }
 }
 
-.comment-form {
+.comment-title {
   width: 100%;
-  max-height: 290px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.comment-form {
+  width: 75%;
+  max-height: 250px;
   padding: 20px 30px;
   display: flex;
   form {
@@ -131,7 +142,7 @@
     }
     textarea {
       resize: none;
-      height: 150px;
+      height: 100px;
     }
   }
 }
