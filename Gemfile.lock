@@ -155,7 +155,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (3.12.6)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -279,7 +279,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth-facebook
   pg
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack_session_access
   rails (~> 5.2.4)
   rspec-rails
