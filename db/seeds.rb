@@ -9,6 +9,7 @@
 #  Character.create(name: 'Luke', movie: movies.first)
 User.create!(email: 'example@railstutorial.org',
              password: 'foobar',
+             name: 'Sudo',
              password_confirmation: 'foobar')
 
 9.times do |n|
@@ -16,6 +17,7 @@ User.create!(email: 'example@railstutorial.org',
   email = "example-#{n + 1}@railstutorial.org"
   password = 'password'
   User.create!(email: email,
+               name: username,
                password: password,
                password_confirmation: password)
 end

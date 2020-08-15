@@ -53,6 +53,10 @@ class User < ApplicationRecord
     # This will produce SQL query with IN. Something like: select * from posts where user_id IN (1,45,874,43);
   end
 
+  def friend_with?(other)
+    (Friendship.where(requester_id: id, requestee_id: other, status: 1)).any?
+  end
+
   def current_friends
     (User.where(id: active_following) + User.where(id: id))
   end

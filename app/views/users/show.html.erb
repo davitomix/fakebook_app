@@ -5,9 +5,14 @@
   </ol>
 </div>
 
-<% if @user.posts.count > 0 %>
-  <ol class="microposts">
-    <%= render @posts_items %>
-  </ol>
-  <%= will_paginate @posts_items %>
+<% if @user == current_user or current_user.friend_with?(@user) %>
+  <% if @user.posts.count > 0 %>
+    <ol class="microposts">
+      <%= render @posts_items %>
+    </ol>
+    <%= will_paginate @posts_items %>
+  <% end %>
+<% else %>
+  <h1> You need to be friend of <%= @user.name %> to see their profile</h1>
+  <h1> Send a friend request! </h1>
 <% end %>
