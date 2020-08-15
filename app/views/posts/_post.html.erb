@@ -6,7 +6,6 @@
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
-    <%= link_to 'Show', post %>
     <% if post.likes_count >= 1 %>
     <p>
       <%= pluralize(post.likes_count, "like") %>
@@ -14,7 +13,7 @@
     <% end %>
     <% if post.comments_count >= 1 %>
     <p>
-      <%= pluralize(post.comments_count, "comment") %>
+      <%= link_to pluralize(post.comments_count, "comment"), post %>
     </p>
     <% end %>
   </span>
