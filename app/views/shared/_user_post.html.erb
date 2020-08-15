@@ -1,3 +1,7 @@
 <%= link_to gravatar_for(@post.user, :size => 125), @post.user, { :class=>"border-to-gravatar" } %>
       <h3><%= @post.user.email %></h3>
-      <span><%= link_to "View profile", @post.user %></span>
+      <% if @post.user == current_user %>
+            <span><%= link_to "View my profile", @post.user %></span>
+      <% else %>
+            <span><%= link_to "View profile", @post.user %></span>
+      <% end %>
