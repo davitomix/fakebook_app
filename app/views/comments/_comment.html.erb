@@ -6,7 +6,7 @@
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
-    <%= link_to 'Show', post_comment_path(post_id: comment.post.id) %>
+    <%= link_to 'Show', [comment.post, comment] %>
     <% if comment.like_comments.count > 0 %>
       <p>
         <%= pluralize(comment.like_comments.count, "like") %>
