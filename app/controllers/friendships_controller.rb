@@ -18,23 +18,20 @@ class FriendshipsController < ApplicationController
   def update
     requester = User.find(params[:requester_id])
     request = current_user.followers_friends.find_by(requester: requester)
-    if request.update(status: 1)
-      Friendship.create(requester: current_user, requestee: requester, status: 1)
-      flash[:notice] = 'Friend confirmed'
-    else
-      flash[:alert] = 'Something went wrong'
-    end
-    redirect_back fallback_location: root_path
-  end
-
-  def edit
-    requester = User.find(params[:requester_id])
-    request = current_user.followers_friends.find_by(requester: requester)
-    if request.update(status: 2)
-      Friendship.create(requester: current_user, requestee: requester, status: 2)
-      flash[:notice] = 'Request rejected!'
-    else
-      flash[:alert] = 'Something went wrong'
+    if params[:status] == 'accepted'
+      if request.update(status: 'accepted')
+        Friendship.create(requester: current_user, requestee: requester, status: 1)
+        flash[:notice] = 'Friend confirmed'
+      else
+        flash[:alert] = 'Something went wrong'
+      end
+    elsif params[:status] == 'rejected'
+      if request.update(status: 'rejected')
+        Friendship.create(requester: current_user, requestee: requester, status: 2)
+        flash[:notice] = 'Request rejected!'
+      else
+        flash[:alert] = 'Something went wrong'
+      end
     end
     redirect_back fallback_location: root_path
   end

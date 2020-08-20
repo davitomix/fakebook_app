@@ -10,8 +10,8 @@
         <%= render 'users/partials/user_profile', user: pending_follower, link: true %>
       </div>
       <div class="comments">
-        <%= link_to 'Accept', friendships_update_path(requester_id: pending_follower.id), class: 'option-button' %>
-        <%= link_to 'Reject', friendships_edit_path(requester_id: pending_follower.id), class: 'option-button' %>
+        <%= link_to 'Accept', friendships_update_path(requester_id: pending_follower.id, status: 'accepted'), class: 'option-button' %>
+        <%= link_to 'Reject', friendships_update_path(requester_id: pending_follower.id, status: 'rejected'), class: 'option-button' %>
       </div>
     </div>
   <% end %>
