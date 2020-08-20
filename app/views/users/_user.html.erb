@@ -5,7 +5,15 @@
       <h5><%= link_to user.name, user %></h5>
     </div>
     <div>
-      <span><%= link_to "Add friend", "#" %></span>
+      <% if current_user.pending_following.include? user %>
+          <span class="request-pending">Request pending...</span>
+          <%= link_to 'Cancel request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% elsif current_user.rejected_followings.include?(user) || current_user.rejected_followers.include?(user) %>
+          <span class="">Request rejected!</span>
+          <%= link_to 'Remove request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% else %>
+          <%= link_to 'Send request', friendships_create_path(requestee_id: user.id), class: 'option-button'  %>
+      <% end %>
     </div>
   </div>
 </li>

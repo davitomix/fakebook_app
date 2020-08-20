@@ -5,14 +5,14 @@ class FriendshipsController < ApplicationController
   def create
     following = current_user.following_friends.new(friendship_params)
     flash[:alert] = "Couldn't be friend #{friendship_params[:requestee_id]}" unless following.save
-    redirect_to users_path
+    redirect_back fallback_location: root_path
   end
 
   def destroy
     requestee = User.find(params[:requestee_id])
     current_user.remove_friendship(requestee.id)
     requestee.remove_friendship(current_user.id)
-    redirect_to users_path
+    redirect_back fallback_location: root_path
   end
 
   def update
@@ -24,7 +24,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = 'Something went wrong'
     end
-    redirect_to users_path
+    redirect_back fallback_location: root_path
   end
 
   def edit
@@ -36,7 +36,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = 'Something went wrong'
     end
-    redirect_to users_path
+    redirect_back fallback_location: root_path
   end
 
   private

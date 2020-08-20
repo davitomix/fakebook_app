@@ -1,6 +1,6 @@
-<% content_for :header_h1 do %>
+
   <h1 class="fakebook">Users 🙋</h1>
-<% end %>
+
 
 <main class="users-container">
   <%= content_tag :h2, 'Pending requests' if current_user.pending_followers.any? %>
