@@ -42,4 +42,23 @@
       </div>
     </div>
   <% end %>
+  <%= content_tag :h2, 'Rejected requests' if @all_users.any? %>
+  <% @rejected_incoming_friendships.each do |user| %>
+    <div class="user-profile">
+      <div class="profile">
+        <%= render 'users/partials/user_profile', user: user, link: true %>
+      </div>
+      <div class="comments">
+        <% if current_user.pending_following.include? user %>
+          <span class="request-pending">Request pending...</span>
+          <%= link_to 'Cancel request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% elsif current_user.rejected_followings.include?(user) || current_user.rejected_followers.include?(user) %>
+          <span class="">Request rejected!</span>
+          <%= link_to 'Remove request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% else %>
+          <%= link_to 'Send request', friendships_create_path(requestee_id: user.id), class: 'option-button'  %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </main>
