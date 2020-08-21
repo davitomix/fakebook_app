@@ -14,5 +14,6 @@
   <% end %>
 <% else %>
   <h1> You need to be friend of <%= @user.name %> to see their profile</h1>
-  <h1> Send a friend request! </h1>
 <% end %>
+
+<span><%= send_friend_request_button(@user) %></span>
