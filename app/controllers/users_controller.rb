@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @following = current_user.active_following
     @followers = current_user.active_followers
     @pending_followers = current_user.pending_followers
+    @pending_following = current_user.pending_following
     @all_users = (@users - @following - @followers - @pending_followers - [current_user]).sort_by(&:id)
   end
 

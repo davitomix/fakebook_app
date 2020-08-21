@@ -1,9 +1,6 @@
-
-  <h1 class="fakebook">Users 🙋</h1>
-
-
+<%= render 'shared/navbar' %>
 <main class="users-container">
-  <%= content_tag :h2, 'Pending requests' if current_user.pending_followers.any? %>
+  <%= content_tag :h2, 'Friend requests' if current_user.pending_followers.any? %>
   <% @pending_followers.each do |pending_follower| %>
     <div class="user-profile">
       <div class="profile">
@@ -15,7 +12,7 @@
       </div>
     </div>
   <% end %>
-  <%= content_tag :h2, 'Following' if (@following).any? %>
+  <%= content_tag :h2, 'Friends' if (@following).any? %>
   <% @following.sort_by(&:id).each do |user| %>
     <div class="user-profile">
       <div class="profile">
@@ -26,8 +23,8 @@
       </div>
     </div>
   <% end %>
-  <%= content_tag :h2, 'All users' if @all_users.any? %>
-  <% @all_users.each do |user| %>
+  <%= content_tag :h2, 'Pending requests' if @all_users.any? %>
+  <% @pending_following.each do |user| %>
     <div class="user-profile">
       <div class="profile">
         <%= render 'users/partials/user_profile', user: user, link: true %>

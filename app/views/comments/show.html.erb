@@ -10,27 +10,9 @@
       <p><%= @comment.content %></p>
     </div>
     <div class="likes-comments">
-      <% 
-=begin %>
       <% if @comment.likes_count > 0 %>
         <p><%= pluralize(@comment.likes_count, "like") %></p>
       <% end %>
-      <% if @comment.comments_count > 0 %>
-        <p><%= pluralize(@comment.comments_count, "comment") %></p>
-      <% end %>
-      <% if current_user == @comment.user %>
-      <%= link_to 'Edit', edit_post_path(@comment) %>
-      <%= link_to "Delete", @comment, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-      <% end %>
-      <% pre_like = @comment.liked_posts.find { |liked_post| liked_post.user_id == current_user.id} %>
-      <% if pre_like %>
-        <%= link_to 'Dislike', post_like_post_path(id: current_user.id, post_id: @comment.id), method: :delete %>
-      <% else %>
-        <%= link_to 'Like', post_like_posts_path(id: current_user.id, post_id: @comment.id), method: :post %>
-      <% end %>
-      <% 
-=end %>
     </div>
   </div>
 </div>
