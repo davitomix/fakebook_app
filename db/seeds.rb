@@ -9,6 +9,7 @@
 #  Character.create(name: 'Luke', movie: movies.first)
 User.create!(email: 'example@railstutorial.org',
              password: 'foobar',
+             name: 'Sudo',
              password_confirmation: 'foobar')
 
 9.times do |n|
@@ -16,6 +17,7 @@ User.create!(email: 'example@railstutorial.org',
   email = "example-#{n + 1}@railstutorial.org"
   password = 'password'
   User.create!(email: email,
+               name: username,
                password: password,
                password_confirmation: password)
 end
@@ -29,10 +31,19 @@ users = User.all
 end
 
 u1 = User.first
+u2 = User.second
 
 for i in (2..8)
   u1.following_friends.new(requestee_id: i, status: "accepted").save
   Friendship.new(requester_id: i, requestee_id: 1, status: "accepted").save
+end
+
+for i in (6...10)
+  u2.followers_friends.new(requester_id: i).save
+end
+
+for i in (3...5)
+  u2.following_friends.new(requestee_id: i).save
 end
 
 posts = Post.all

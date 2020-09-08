@@ -9,9 +9,10 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item d-flex"><%= link_to "Profile", current_user, class: "nav-cust" %></li>
-          <li class="nav-item d-flex"><%= link_to 'Friends', users_path, class: "nav-cust" %></li>
           <% if current_user.pending_followers.any? %>
-            <li class="nav-item d-flex"><%= link_to "Friend Requests #{current_user.pending_followers.count}", users_path, class: "nav-cust pending" %></li>
+            <li class="nav-item d-flex"><%= link_to "Friends  (#{current_user.pending_followers.count})", users_path, class: "nav-cust pending" %></li>
+          <% else %>
+            <li class="nav-item d-flex"><%= link_to 'Friends', users_path, class: "nav-cust" %></li>
           <% end %>
           <li class="nav-item d-flex"><%= link_to 'About', about_path, class: "nav-cust" %></li>
           <li class="nav-item d-flex"><%= link_to 'Contact', contact_path, class: "nav-cust" %></li>

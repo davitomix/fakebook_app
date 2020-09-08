@@ -1,21 +1,18 @@
-<% content_for :header_h1 do %>
-  <h1 class="fakebook">Users 🙋</h1>
-<% end %>
-
+<%= render 'shared/navbar' %>
 <main class="users-container">
-  <%= content_tag :h2, 'Pending requests' if current_user.pending_followers.any? %>
+  <%= content_tag :h2, 'Friend requests' if current_user.pending_followers.any? %>
   <% @pending_followers.each do |pending_follower| %>
     <div class="user-profile">
       <div class="profile">
         <%= render 'users/partials/user_profile', user: pending_follower, link: true %>
       </div>
       <div class="comments">
-        <%= link_to 'Accept', friendships_update_path(requester_id: pending_follower.id), class: 'option-button' %>
-        <%= link_to 'Reject', friendships_edit_path(requester_id: pending_follower.id), class: 'option-button' %>
+        <%= link_to 'Accept', friendships_update_path(requester_id: pending_follower.id, status: 'accepted'), class: 'option-button' %>
+        <%= link_to 'Reject', friendships_update_path(requester_id: pending_follower.id, status: 'rejected'), class: 'option-button' %>
       </div>
     </div>
   <% end %>
-  <%= content_tag :h2, 'Following' if (@following).any? %>
+  <%= content_tag :h2, 'Friends' if (@following).any? %>
   <% @following.sort_by(&:id).each do |user| %>
     <div class="user-profile">
       <div class="profile">
@@ -26,8 +23,27 @@
       </div>
     </div>
   <% end %>
-  <%= content_tag :h2, 'All users' if @all_users.any? %>
-  <% @all_users.each do |user| %>
+  <%= content_tag :h2, 'Pending requests' if @all_users.any? %>
+  <% @pending_following.each do |user| %>
+    <div class="user-profile">
+      <div class="profile">
+        <%= render 'users/partials/user_profile', user: user, link: true %>
+      </div>
+      <div class="comments">
+        <% if current_user.pending_following.include? user %>
+          <span class="request-pending">Request pending...</span>
+          <%= link_to 'Cancel request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% elsif current_user.rejected_followings.include?(user) || current_user.rejected_followers.include?(user) %>
+          <span class="">Request rejected!</span>
+          <%= link_to 'Remove request', friendships_destroy_path(requestee_id: user.id), class: 'option-button'  %>
+        <% else %>
+          <%= link_to 'Send request', friendships_create_path(requestee_id: user.id), class: 'option-button'  %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <%= content_tag :h2, 'Rejected requests' if @all_users.any? %>
+  <% @rejected_incoming_friendships.each do |user| %>
     <div class="user-profile">
       <div class="profile">
         <%= render 'users/partials/user_profile', user: user, link: true %>
