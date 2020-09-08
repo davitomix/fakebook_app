@@ -1,10 +1,17 @@
 # Fakebook App :rocket:
+
 ### Authors: [David Eli Martinez](https://github.com/davitomix) 👤 & [Alisson Peres](https://github.com/alissonperes) 👤
 
 This project requests you to build a Facebook-like social network application. <br>
 Some of the core features of the platform – users, profiles, “friending”, posts, news feed, and “liking”. <br>
 Full task description: <br>
-[*The Odin Project*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project).
+[_The Odin Project_](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project).
+
+<p align="center">
+  <a href="#">
+    <img src="./docs/fakebookmain.gif" alt="Logo">
+  </a>
+</p>
 
 ## Built With
 
@@ -14,6 +21,7 @@ Full task description: <br>
 - Ruby lint Rubocop.
 
 ## Live Demo
+
 [Live version :gem:](https://arcane-brushlands-20389.herokuapp.com/).
 
 ## Getting Started
@@ -31,6 +39,7 @@ $ rails db:migrate
 ```
 
 Then, make many moc data to interaction:
+
 ```
 $ rails db:seed
 ```
@@ -52,13 +61,12 @@ $ rails server
 👤 **David Eli Martinez Garcia**
 
 - Github: [@davitomix](https://github.com/davitomix)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- LinkedIn: [linkedin](https://linkedin.com/linkedinhandle)
 
 👤 **Alisson Peres**
 
 - Github: [@alissonperes](https://github.com/alissonperes)
-- Linkedin: [linkedin](https://www.linkedin.com/in/alissonperes/)
-
+- LinkedIn: [linkedin](https://www.linkedin.com/in/alissonperes/)
 
 ## 🤝 Contributing
 
