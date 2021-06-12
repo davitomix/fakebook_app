@@ -58,10 +58,11 @@ $ rails server
 
 ## Authors
 
-👤 **David Eli Martinez Garcia**
+👤 **David Martínez**
 
-- Github: [@davitomix](https://github.com/davitomix)
-- LinkedIn: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@davomartinez-dev](https://github.com/davomartinez-dev)
+- Twitter: [@davomartinezdev](https://twitter.com/davomartinezdev)
+- LinkedIn: [David Martínez](https://www.linkedin.com/in/davidelimartinez/)
 
 👤 **Alisson Peres**
 
